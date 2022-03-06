@@ -11,6 +11,9 @@ public class C_LoopAndString {
      * the given character
      */
     public static boolean containsDoubleChar(String s, char ch) {
+        for (int i = 0; i < s.length()-1; i++) {
+            if (s.charAt(i) == ch && s.charAt(i+1) == ch) return true;
+        }
         return false;
     }
 
@@ -24,7 +27,21 @@ public class C_LoopAndString {
      * @param offset shift amount
      */
     public static String caesarEncrypt(String s, int offset) {
-        return null;
+        char[] inp = s.toCharArray();
+        int out;
+        for (int i = 0; i < inp.length; i++) {
+            if(inp[i] >= 'A' && inp[i] <= 'Z') {
+                out = (inp[i] - 'A' + offset) % 26 + 'A';
+                while(out < 'A') out += 26;
+                inp[i] = (char) out;
+            }
+            if(inp[i] >= 'a' && inp[i] <= 'z') {
+                out = (char) ((inp[i] - 'a' + offset) % 26 + 'a');
+                while(out < 'a') out += 26;
+                inp[i] = (char) out;
+            }
+        }
+        return new String(inp);
     }
 
     /**
@@ -37,7 +54,7 @@ public class C_LoopAndString {
      * @param c shift amount
      */
     public static String caesarDecrypt(String s, int c) {
-        return null;
+        return caesarEncrypt(s,-c);
     }
 
     /*

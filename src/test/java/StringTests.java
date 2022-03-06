@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StringTests {
     @Test
@@ -105,7 +106,25 @@ public class StringTests {
         assertEquals("zy", C_LoopAndString.caesarDecrypt("yx", -1));
     }
 
-    /*
-    Additional method tests should be provided below.
-     */
+    @Test
+    public void words_test(){
+        assertEquals(6,D_MyExercises.words("Hi This is the first sentence."));
+        assertEquals(3,D_MyExercises.words("Hey bro whassup"));
+    }
+
+    @Test
+    public void reverse_test(){
+        assertEquals("cba",D_MyExercises.reverse("abc"));
+        assertEquals(".tssset rehtooona",D_MyExercises.reverse("anooother tessst."));
+        assertEquals("Let me Down Slowly",D_MyExercises.reverse("ylwolS nwoD em teL"));
+        assertEquals("neve ro ddo reven",D_MyExercises.reverse("never odd or even"));
+
+    }
+
+    @Test
+    public void FixCasing_test(){
+        assertEquals("Another Boring Test",D_MyExercises.FixCasing("aNotHer boRing TEst"));
+        assertEquals("Hi My Name Is Erfan! How Are You?",D_MyExercises.FixCasing("hi mY NAmE is eRfAn! hOw aRe yOU?"));
+
+    }
 }
