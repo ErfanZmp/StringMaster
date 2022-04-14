@@ -16,7 +16,7 @@ public class B_StringMethods {
     }
 
     /**
-     * <p>Checks هf the number of repetitions of the specified character in a
+     * <p>Checks if the number of repetitions of the specified character in a
      * string is a certain number</p>
      *
      * @param text the given text
